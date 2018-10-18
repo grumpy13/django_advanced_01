@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory List{% endblock title %}
+
+{% block content %}
+<br>
+
+<div class="row">
+    {% for inventory in inventories %}
+    <div class="col-md-4">
+        <div class="card my-card">
+
+          <div class="card-body">
+            <h5 class="card-title">{{inventory.name}}</h5>
+            
+            <p class="card-text">Store name:
+              {{inventory.store.name}}
+            </p>
+
+            <p class="card-text">Is empty:
+              {{inventory.is_empty}}
+            </p>
+
+            <p class="card-text">Last updated on:
+              {{inventory.last_updated}}
+            </p>
+
+          </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{%endblock content%}
